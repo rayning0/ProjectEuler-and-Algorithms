@@ -1,7 +1,7 @@
 # http://projecteuler.net/problem=7
 # What is the 10001st prime number?
 
-# This method takes only 1 second!
+# This method takes < 1 second!
 #  ------Fast way to check if number is prime------------
 def is_prime?(num)
   return false if num <= 1
@@ -11,12 +11,14 @@ def is_prime?(num)
   return false if num % 3 == 0  # goodbye multiples of 3
 
   j = 5
+  w = 2
   
-  while j <= Math.sqrt(num) # only must check up to sqrt(num), since factors invert order afterwards
+  while j * j <= num # only check j up to sqrt(num), since factors invert order afterwards
     return false if num % j == 0  
-    j += 2                        # only check odd numbers
-    return false if num % j == 0  # divide by next odd number
-    j += 4                        # don't check multiples of 3. Faster.
+    j += w      # Only checks odd numbers. First checks j + 2
+    w = 6 - w   # Don't check multiples of 3. So then checks j + 4. 
+
+    # Alternates + 2, + 4, + 2, etc.
   end
 
   true
@@ -33,6 +35,9 @@ while true
   end
   i += 1
 end
+
+# Useful link: 
+# http://stackoverflow.com/questions/1801391/what-is-the-best-algorithm-for-checking-if-a-number-is-prime
 
 =begin
 
