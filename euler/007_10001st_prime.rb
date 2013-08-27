@@ -3,6 +3,7 @@
 
 # This method takes < 1 second!
 #  ------Fast way to check if number is prime------------
+
 def is_prime?(num)
   return false if num <= 1
   return true if num.between?(2, 3) # true if 2 <= num <= 3
@@ -17,8 +18,7 @@ def is_prime?(num)
     return false if num % j == 0  
     j += w      # Only checks odd numbers. First checks j + 2
     w = 6 - w   # Don't check multiples of 3. So then checks j + 4. 
-
-    # Alternates + 2, + 4, + 2, etc.
+                # Alternates + 2, + 4, + 2, etc.
   end
 
   true
