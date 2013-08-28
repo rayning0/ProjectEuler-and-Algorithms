@@ -1,7 +1,7 @@
 # Fast way to check if number is prime
 
 def is_prime?(n)
-  return false if (n.even? || n % 3 == 0 || n <= 1)   # no evens, multiples of 3, and nums <= 1
+  return false if (n.even? || n % 3 == 0 || n <= 1)   # no evens, multiples of 3, or nums <= 1
   return true if n.between?(2, 3)
 
   j, w = 5, 2
