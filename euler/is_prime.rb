@@ -14,3 +14,7 @@ def is_prime?(n)
 
   true
 end
+
+puts "Enter number. I'll tell you if it's prime."
+n = gets.chomp.to_i
+puts "Prime? #{is_prime?(n)}"
