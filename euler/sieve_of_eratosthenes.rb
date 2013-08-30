@@ -1,8 +1,10 @@
-# Sieve of Eratosthenes: quickly makes big array of primes, to test if numbers are prime
+# Sieve of Eratosthenes: quickly makes big array of primes. May hog all your memory.
 # http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
 # http://www.mathblog.dk/sum-of-all-primes-below-2000000-problem-10/
 
 # Raymond Gan: Coded my own version, from scratch!
+require 'benchmark'
+require 'json'
 
 def sieve(n)    # makes array of all primes from 2 to n
   s = 3.step(n, 2).to_a # make array of odd integers from 3 to n. Skip evens. 
@@ -23,7 +25,7 @@ def sieve(n)    # makes array of all primes from 2 to n
 
   end
   s.compact!    # removes all nil elements from array
-  s.unshift(2)  # adds 2 as 1st element
+  s.unshift(2).sort  # adds 2 as 1st element
 end
 
 def is_prime?(n)
@@ -41,22 +43,46 @@ def is_prime?(n)
   true
 end
 
+
 puts "Enter n. I'll make an array of primes up till n:"
 n = gets.chomp.to_i
 puts
 s = sieve(n)
-# print s
-puts
+puts "Array size = #{s.size}"
+puts "Putting it in text file...(WARNING: this may create a HUGE file that uses up all your memory! May need to reboot.)"
+File.open('sieveprimes-serialized.txt', 'w') {|f| f.write(Marshal.dump(s))}
+File.open('jsonprimes.txt', 'w') {|f| f.write(s.to_json)}
 
+puts "Enter n. I'll tell you if it's prime"
+n = gets.chomp.to_i
+
+Benchmark.bm(27) do |bm|
+  bm.report("Using is_prime method. ") do     # Fastest!
+    puts "Prime? #{is_prime?(n)}"
+  end
+
+  bm.report("Read in primes from serialized file. ") do
+    t = Marshal.load File.read('sieveprimes-serialized.txt')
+
+    # uses Sieve of Eratosthenes file to check if prime. Slower.
+    prime = t.any? {|i| i == n}
+    puts "Prime? #{prime}"
+  end
+
+  bm.report("Read in primes from JSON file. ") do   # Slowest!
+    j = JSON.parse(File.read('jsonprimes.txt'))
+    prime = j.any? {|i| i == n}
+    puts "Prime? #{prime}"
+  end
+end
+
+
+
+=begin
 # sum all primes
 # puts "Sum of all primes: #{s.inject(:+)}"
 
 
-s.each do |x|
-  puts "#{x} is not prime" if !is_prime?(x)
-end
-
-puts "Done testing all primes with is_prime? method."
 
 
 
