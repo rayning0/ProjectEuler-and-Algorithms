@@ -3,6 +3,8 @@
 
 require 'csv'
 
+start = Time.now
+
 names = CSV.read("names.txt").shift     # Remember this! Reads CSV file into array!
 
 names.sort!   # sort names in alphabetical order
@@ -21,4 +23,6 @@ names.each do |name|
   i += 1
 end
 
-puts "Total name scores for file = #{nscore}"
+puts "Total name scores for file = #{nscore} in #{Time.now - start} seconds."
+
+
