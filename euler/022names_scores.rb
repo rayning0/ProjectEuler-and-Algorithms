@@ -8,7 +8,6 @@ start = Time.now
 names = CSV.read("names.txt").shift     # Remember this! Reads CSV file into array!
 
 names.sort!   # sort names in alphabetical order
-
 nscore = 0
 i = 1         # first name on list is position 1
 

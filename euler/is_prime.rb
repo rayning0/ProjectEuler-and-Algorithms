@@ -1,5 +1,6 @@
 # Fast way to check if number is prime
-# Compared several methods and timed with Benchmark class
+# Compared several methods and timed with Benchmark class. See results below.
+# Also see times for summing all primes < 2 million, in 010summation_of_primes.rb
 
 require 'benchmark'
 require 'json'
@@ -25,7 +26,7 @@ def is_prime_sieve?(s, n)   # trial division, only dividing by primes from sieve
   return false if (n.even? || n % 3 == 0 || n <= 1)   # no evens, multiples of 3, or nums <= 1
   
   s.each do |d|
-    return true if d == n       # if n = number in prime file
+    return true if d * d > n    # only must check up till sqrt(n)!
     return false if n % d == 0  # if n is divisible by a number in prime file
   end
 
@@ -37,7 +38,7 @@ n = gets.chomp.to_i
 
 
 Benchmark.bm do |bm|
-  bm.report("With is_prime method. Prime? ") do
+  bm.report("With is_prime? method. Prime? ") do
     puts "#{is_prime?(n)}."
   end
 
@@ -58,11 +59,11 @@ s = Marshal.load(File.read('sieveprimes-serialized.txt'))
 j = JSON.parse(File.read('jsonprimes.txt'))
 
 Benchmark.bm do |bm|
-  bm.report("Only dividing by primes from sieveprimes-serialized.txt. Prime? ") do
+  bm.report("is_prime_sieve? method. Only dividing by primes from sieveprimes-serialized.txt. Prime? ") do
     puts "#{is_prime_sieve?(s, n)}"
   end
 
-  bm.report("Only dividing by primes from jsonprimes.txt. Prime? ") do
+  bm.report("is_prime_sieve? method. Only dividing by primes from jsonprimes.txt. Prime? ") do
     puts "#{is_prime_sieve?(j, n)}"
   end
 
@@ -81,30 +82,36 @@ Benchmark.bm do |bm|
   end
 end
 
-=begin. Output of benchmarks:
+=begin -----Output of Benchmarks------
+  
+in_prime? method is still fastest, if you count time to load sieve prime files into memory. 
+Serialized file both loads and processes faster than JSON.
 
-Clearly in_prime? method is still the fastest. Serialized file both loads 
-and processes faster than JSON.
+However, if you load file in ADVANCE, before asking for a number, trial division by sieve prime 
+file is 100 times FASTER than in_prime? method! See times in parentheses below.
 
 
 Enter number (< 2 million). I'll tell you if it's prime.
 1999993 (This is biggest prime < 2 million)
 
        user     system      total        real
-With is_prime method. Prime? true.
-  0.000000   0.000000   0.000000 (  0.008447)
+With is_prime? method. Prime? true.
+  0.000000   0.000000   0.000000 (  0.008140)
+
 Time to load serialized sieve file of primes
-  0.020000   0.000000   0.020000 (  0.026041)
+  0.020000   0.000000   0.020000 (  0.023152)
 Time to load JSON sieve file of primes
-  0.050000   0.000000   0.050000 (  0.053372)
+  0.050000   0.000000   0.050000 (  0.051422)
        user     system      total        real
-Only dividing by primes from sieveprimes-serialized.txt. Prime? true
-  0.030000   0.000000   0.030000 (  0.029442)
-Only dividing by primes from jsonprimes.txt. Prime? true
-  0.030000   0.000000   0.030000 (  0.032958)
+
+is_prime_sieve? method. Only dividing by primes from sieveprimes-serialized.txt. Prime? true
+  0.000000   0.000000   0.000000 (  0.000081)
+is_prime_sieve? method. Only dividing by primes from jsonprimes.txt. Prime? true
+  0.000000   0.000000   0.000000 (  0.000074)
+
 Search for prime in serialized file, with any? method. Prime? true
-  0.020000   0.000000   0.020000 (  0.023802)
+  0.020000   0.000000   0.020000 (  0.025055)
 Search for prime in JSON file, with any? method. Prime? true
-  0.030000   0.000000   0.030000 (  0.026329)
+  0.030000   0.000000   0.030000 (  0.025537)
 
 =end
