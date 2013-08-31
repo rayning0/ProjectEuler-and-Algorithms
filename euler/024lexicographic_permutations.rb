@@ -1,6 +1,12 @@
 # http://projecteuler.net/problem=24
 # What is the millionth lexicographic permutation of the digits 0, 1, 2, 3, 4, 5, 6, 7, 8 and 9?
 
+# 1 line solution (but slow). It makes all 1 million permutations, then picks 1 millionth entry of string array
+
+# [*0..9].permutation.map(&:join)[999_999] = answer!
+
+# [*0..9] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
 permutation = ''
 c = 0
 
