@@ -67,25 +67,23 @@ Benchmark.bm do |bm|
     puts "#{is_prime_sieve?(j, n)}"
   end
 
-  bm.report("Search for prime in serialized file, with any? method. ") do
+  bm.report("Search for prime in serialized file with include? method. ") do
     #t = Marshal.load File.read('sieveprimes-serialized.txt')
 
     # uses Sieve of Eratosthenes file to check if prime. Slower.
-    prime = s.any? {|i| i == n}
-    puts "Prime? #{prime}"
+    puts "Prime? #{s.include?(n)}"
   end
 
-  bm.report("Search for prime in JSON file, with any? method. ") do   # Slowest!
+  bm.report("Search for prime in JSON file with include? method. ") do   # Slowest!
     #j = JSON.parse(File.read('jsonprimes.txt'))
-    prime = j.any? {|i| i == n}
-    puts "Prime? #{prime}"
+    puts "Prime? #{j.include?(n)}"
   end
 end
 
 =begin -----Output of Benchmarks------
   
 in_prime? method is still fastest, if you count time to load sieve prime files into memory. 
-Serialized file both loads and processes faster than JSON.
+Serialized file loads faster and but processes slower than JSON.
 
 However, if you load file in ADVANCE, before asking for a number, trial division by sieve prime 
 file is 100 times FASTER than in_prime? method! See times in parentheses below.
@@ -96,22 +94,21 @@ Enter number (< 2 million). I'll tell you if it's prime.
 
        user     system      total        real
 With is_prime? method. Prime? true.
-  0.000000   0.000000   0.000000 (  0.008140)
+  0.000000   0.000000   0.000000 (  0.000889)
 
 Time to load serialized sieve file of primes
-  0.020000   0.000000   0.020000 (  0.023152)
+  0.020000   0.000000   0.020000 (  0.021665)
 Time to load JSON sieve file of primes
-  0.050000   0.000000   0.050000 (  0.051422)
-       user     system      total        real
+  0.050000   0.000000   0.050000 (  0.051689)
 
 is_prime_sieve? method. Only dividing by primes from sieveprimes-serialized.txt. Prime? true
-  0.000000   0.000000   0.000000 (  0.000081)
+  0.000000   0.000000   0.000000 (  0.000083)
 is_prime_sieve? method. Only dividing by primes from jsonprimes.txt. Prime? true
-  0.000000   0.000000   0.000000 (  0.000074)
+  0.000000   0.000000   0.000000 (  0.000073)
 
-Search for prime in serialized file, with any? method. Prime? true
-  0.020000   0.000000   0.020000 (  0.025055)
-Search for prime in JSON file, with any? method. Prime? true
-  0.030000   0.000000   0.030000 (  0.025537)
+Search for prime in serialized file, with include? method. Prime? true
+  0.010000   0.000000   0.010000 (  0.011237)
+Search for prime in JSON file, with include? method. Prime? true
+  0.010000   0.000000   0.010000 (  0.011146)
 
 =end
