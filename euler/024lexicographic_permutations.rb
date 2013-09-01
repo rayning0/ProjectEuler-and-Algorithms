@@ -7,6 +7,55 @@
 
 # [*0..9] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
+# Best non-recursive routine. Took only 1.4 secs to solve Project Euler 24.
+# Taken from http://www.mathblog.dk/project-euler-24-millionth-lexicographic-permutation/
+
+count = 1
+numPerm = 1_000_000   # get 1 millionth permutation
+i, j = 0, 0
+n = a.length
+
+while (count < numPerm) 
+  i = n-1
+
+  while (a[i - 1] >= a[i]) 
+    i -= 1
+  end 
+ 
+  j = n
+
+  while (a[j - 1] <= a[i - 1]) 
+    j -= 1
+  end  
+ 
+  # start with a[i-1] = 8, a[j-1] = 9
+
+  # swap values at position i-1 and j-1
+  # puts "i-1 = #{i-1}, j-1 = #{j-1}"
+  a[i - 1], a[j - 1] = a[j - 1], a[i - 1]
+
+  # p a
+
+  i += 1
+  j = n
+
+  while (i < j) 
+    # puts "i-1 = #{i-1}, j-1 = #{j-1} (while i<j)"
+    a[i - 1], a[j - 1] = a[j - 1], a[i - 1]
+
+    # p a
+
+    i += 1
+    j -= 1
+  end
+  count += 1
+end
+
+p a
+puts "It took #{Time.now - start} secs."
+
+=begin
+
 permutation = ''
 c = 0
 
@@ -50,36 +99,5 @@ start = Time.now
     end
   end
 end
-
-
-=begin
-
-0123 
-0132  
-0213 
-0231 
-0312 
-0321  
-------- 
-1023     
-1032
-1203
-1230
-1302
-1320
-
-2013
-2031
-2103
-2130
-2301
-2310
-
-3012
-3021
-3102
-3120
-3201
-3210
 
 =end
