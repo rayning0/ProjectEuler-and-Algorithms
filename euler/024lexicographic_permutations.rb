@@ -10,6 +10,7 @@
 # Best non-recursive routine. Took only 1.4 secs to solve Project Euler 24.
 # Taken from http://www.mathblog.dk/project-euler-24-millionth-lexicographic-permutation/
 
+a = [*0..9]
 count = 1
 numPerm = 1_000_000   # get 1 millionth permutation
 i, j = 0, 0
