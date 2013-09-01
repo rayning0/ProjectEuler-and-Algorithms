@@ -16,6 +16,8 @@ numPerm = 1_000_000   # get 1 millionth permutation
 i, j = 0, 0
 n = a.length
 
+start = Time.now
+
 while (count < numPerm) 
   i = n-1
 
@@ -59,8 +61,6 @@ puts "It took #{Time.now - start} secs."
 
 permutation = ''
 c = 0
-
-start = Time.now
 
 (0..9).each do |i|
   (0..9).each do |j|
