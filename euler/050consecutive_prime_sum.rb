@@ -47,7 +47,7 @@ sums = {}
 # Copying trick we did in Problem 23, instead of subtracting each prime from test prime,
 # we create all possible sums from consecutive primes, then check if sums are prime.
 primes.each_with_index do |p, i|
-  break if i > primes.size / 21 - 2
+  break if i > primes.size / 21 - 1
   c = 1       # number of consecutive primes added to get sum
   sum = p
   j = i + 1
