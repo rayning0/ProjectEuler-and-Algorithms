@@ -1,6 +1,9 @@
 =begin
 http://projecteuler.net/problem=31
 
+Dynamic programming solution is much better. Read it:
+http://www.mathblog.dk/project-euler-31-combinations-english-currency-denominations/
+
 In England the currency is made up of pound, £, and pence, p, and there are eight coins in general circulation:
 
 1p, 2p, 5p, 10p, 20p, 50p, £1 (100p) and £2 (200p).
