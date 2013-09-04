@@ -12,7 +12,6 @@ answer = []
   end
 
   answer << i if i == sum 
-  i += 1
 end
 
 puts "Sum of all #'s that can be written as sum of 5th powers of their digits = #{answer.inject(:+)}"
