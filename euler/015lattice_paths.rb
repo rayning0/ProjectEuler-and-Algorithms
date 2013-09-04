@@ -9,6 +9,8 @@ to reach any point. Put that # in array.
 # of paths to reach any point = # of paths to reach square ABOVE it + # of paths to reach square to its LEFT.
 
 When you reach lower right corner, tbe final total of paths will be the answer!  
+
+Here's a "pretty picture" of different paths: http://mathforum.org/advanced/robertd/manhattan.html
 =end
 
 start = Time.now
