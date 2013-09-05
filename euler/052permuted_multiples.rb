@@ -10,11 +10,11 @@ start = Time.now
 
   if [p[2], p[3], p[4], p[5], p[6]].all? {|y| y == p[1]}  # if they're all equal
  
-     puts "Smallest x such that 2x, 3x, 4x, 5x, and 6x, contain same digits = #{x}.\nMultiples: #{2*x}, #{3*x}, #{4*x}, #{5*x}, #{6*x}. Took #{Time.now - start} secs."
+    puts "Smallest x such that 2x, 3x, 4x, 5x, and 6x, contain same digits = #{x}.\nMultiples: #{2*x}, #{3*x}, #{4*x}, #{5*x}, #{6*x}. Took #{Time.now - start} secs."
   end
 end
 
 =begin
- Smallest x such that 2x, 3x, 4x, 5x, and 6x, contain same digits = 142857.
+Smallest x such that 2x, 3x, 4x, 5x, and 6x, contain same digits = 142857.
 Multiples: 285714, 428571, 571428, 714285, 857142. Took 11.35892 secs.
 =end
