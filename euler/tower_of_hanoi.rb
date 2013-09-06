@@ -1,5 +1,6 @@
 # Raymond Gan-------Tower of Hanoi problem-------------
 # http://en.wikipedia.org/wiki/Tower_of_Hanoi
+# http://www.skorks.com/2010/03/solving-the-towers-of-hanoi-mathematically-and-programmatically-the-value-of-recursion/
 
 #     Recursive solution:
 # http://www.sparknotes.com/cs/recursion/examples/section6.rhtml 
