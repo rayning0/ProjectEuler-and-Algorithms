@@ -16,8 +16,8 @@
 class Array     # prints multidimensional array in pretty format
   def to_table 
     l = []
-    self.each{|r|r.each_with_index{|f,i|l[i] = [l[i]||0, f.to_s.length].max}}
-    self.each{|r|r.each_with_index{|f,i|print "#{f.to_s.ljust l[i]} "}; puts}
+    self.each{|r| r.each_with_index{|f,i| l[i] = [l[i]||0, f.to_s.length].max}}
+    self.each{|r| r.each_with_index{|f,i| print "#{f.to_s.ljust l[i]} "}; puts}
   end
 end
 
