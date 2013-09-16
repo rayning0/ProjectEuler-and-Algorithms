@@ -51,14 +51,13 @@ def toh_iterative(n)
     if !top.even?
       # move left if disk odd and n odd. move right if disk odd and n even.
       col -= left
-      col = 2 if col < 0      # If moves off edge, swing it back around.
-      col = 0 if col > 2
     else
       # move right if disk even and n odd. move left if disk even and n odd.
       col += left 
-      col = 2 if col < 0      # If moves off edge, swing it back around.
-      col = 0 if col > 2
     end
+
+    col = 2 if col < 0      # If moves off edge, swing it back around.
+    col = 0 if col > 2
     
     endtop = t.transpose[col].detect {|d| d != ''}  # top disk in new column
     row = t.transpose[col].index(endtop) - 1        # 1st empty row in new column
@@ -104,7 +103,7 @@ Move top disc 3: A => C.
 Move top disc 1: B => A.
 Move top disc 2: B => C.
 Move top disc 1: A => C.
-Recursive way took 0.000109 secs.
+Recursive way took 0.000271 secs.
 1     
 2     
 3     
@@ -137,6 +136,6 @@ A B C
     2 
     3 
 A B C 
-Iterative way took 0.016033 secs.
+Iterative way took 0.003831 secs.
 
 =end
