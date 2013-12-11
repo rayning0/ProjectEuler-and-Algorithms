@@ -66,6 +66,43 @@ def shell_sort(list)
   list
 end
 
+# divide-and-conquer. recursive. 
+# divides whole array into 1-element arrays, then merges them back (while sorting), 
+# doubling size each time
+def merge_sort(list)
+  return list if list.length <= 1
+
+  middle = list.length / 2
+  left = list[0..middle - 1]
+  right = list[middle..-1]
+  left = merge_sort(left)
+  right = merge_sort(right)
+  merge(left, right)
+end
+ 
+def merge(left, right)
+  merged = []
+ 
+  until left.empty? || right.empty?
+    if left.first <= right.first
+      merged << left.shift
+    else
+      merged << right.shift
+    end
+  end
+
+  # if right empty, add remaining left part to merged
+  unless left.empty?
+    merged += left
+  end
+
+  # if left empty, add remaining right part to merged
+  unless right.empty?
+    merged += right
+  end
+  merged
+end
+
 =begin   ---- shell sort ----
 a = [15, 8, 4, 12, 4, 3, 10, 6, 2, 0]
 gap = 5
@@ -112,11 +149,10 @@ s = [0, 2, 3, 4, 4, 6, 8, 10, 12, 15]
 #puts "Enter list of numbers to sort, separated by spaces:"
 #array = gets.chomp.split.map {|v| v.to_i } # makes array of integers
 
-n = 5000
-a = Array.new(n) { rand(n*2) }  # make array of random numbers
+n = 10000
+a = Array.new(n) { rand(n) }  # make array of random numbers
 
-
-sorted = shell_sort(a)
+sorted = merge_sort(a)
 if sorted == a.sort
   puts "Sorted #{n} values. Your sort matches result of Ruby 'sort' method."
 #  puts "s = #{sorted}"
@@ -129,19 +165,21 @@ Benchmark.bm(7) do |x|
   x.report("bubble sort: ") {bubble_sort(a)}
   x.report("insert sort: ") {insertion_sort(a)}
   x.report("select sort: ") {selection_sort(a)}
+  x.report("merge  sort: ") {merge_sort(a)}
   x.report("ruby   sort: ") {a.sort}
 end
 
 =begin
-
+Ruby 2.0.0
 Comparing speed of all sorting techniques. Output. The last column tells # of seconds. Select sort is the slowest.
 
-Sorted 5000 values. Your sort matches result of Ruby 'sort' method.
+Sorted 10000 values. Your sort matches result of Ruby 'sort' method.
               user     system      total        real
-shell  sort:   0.030000   0.000000   0.030000 (  0.031814)
-bubble sort:   0.000000   0.000000   0.000000 (  0.002654)
-insert sort:   0.010000   0.000000   0.010000 (  0.003197)
-select sort:   6.850000   0.000000   6.850000 (  6.905471)
-ruby   sort:   0.000000   0.000000   0.000000 (  0.000217)
+shell  sort:   0.120000   0.000000   0.120000 (  0.128072)
+bubble sort:   0.000000   0.000000   0.000000 (  0.001883)
+insert sort:   0.000000   0.000000   0.000000 (  0.002288)
+select sort:  10.300000   0.080000  10.380000 ( 11.138458)
+merge  sort:   0.040000   0.000000   0.040000 (  0.045420)
+ruby   sort:   0.000000   0.000000   0.000000 (  0.000173)
 
 =end

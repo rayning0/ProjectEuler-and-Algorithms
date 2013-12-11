@@ -7,6 +7,7 @@ end
 
 palindromes = []
 
+start = Time.now
 999.downto(900) do |x|    # don't need to look at numbers below 900
   999.downto(900) do |y|
     if is_palindrome?(x * y)
@@ -17,3 +18,4 @@ palindromes = []
 end
 
 puts "Largest palindrome = #{palindromes.max}"
+puts "It took #{Time.now - start} secs."

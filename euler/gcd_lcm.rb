@@ -14,6 +14,14 @@ def gcd(k, m)
   k
 end
 
+# recursive way
+
+def gcd_recursive(k, m)
+  return k if m == 0
+  r = k % m
+  gcd_recursive(m, r)
+end
+
 # Least Common Multiple: LCM(a, b) = a * b / GCD(a, b)
 def lcm(a, b)   
   a / gcd(a, b) * b
@@ -24,4 +32,9 @@ print "Number 1: "
 a = gets.chomp.to_i
 print "Number 2: "
 b = gets.chomp.to_i
-puts "GCD: #{gcd(a, b)}. LCM: #{lcm(a, b)}."
+puts "LCM: #{lcm(a, b)}."
+
+start = Time.now
+puts "GCD (iterative way): #{gcd(a, b)}. Took #{Time.now - start} secs."
+start = Time.now
+puts "GCD (recursive way): #{gcd_recursive(a, b)}. Took #{Time.now - start} secs."
