@@ -83,7 +83,7 @@ end
 def merge(left, right)
   merged = []
  
-  until left.empty? || right.empty?
+  while !left.empty? && !right.empty?
     if left.first <= right.first
       merged << left.shift
     else
