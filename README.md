@@ -1,0 +1,1 @@
+Project Euler (http://projecteuler.net/problems) and algorithm problems. See /euler and /algo directories. Please do NOT see my solution for a problem unless you have first tried it yourself. (Also, see my repo on RubyQuiz, InterviewCake, and other challenge questions: https://github.com/rayning0/rubyquiz)
