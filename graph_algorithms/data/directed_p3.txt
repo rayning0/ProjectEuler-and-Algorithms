@@ -1,0 +1,29 @@
+directed
+10
+A
+B
+C
+D
+E
+F
+G
+H
+I
+J
+A B 1
+B G 1
+C H 1
+C I 1
+C B 1
+C D 1
+D E 1
+E J 1
+F B 1
+F A 1
+G C 1
+G H 1
+G F 1
+H I 1
+I D 1
+J I 1
+J D 1

@@ -1,0 +1,588 @@
+>> rspec
+............Shortest path: ["A", "B", "C"], Length = 9
+Shortest path: ["B", "C", "E", "B"], Length = 9
+Shortest path: ["C", "E", "B", "C"], Length = 9
+Shortest path: ["A", "B", "F", "H", "E"], Length = 13
+Shortest path: ["C", "D", "C"], Length = 2
+..Cycles: [["B", "C", "E"], ["B", "C", "D", "E"], ["D", "C"]]
+
+Cycles: [["6", "3"], ["4", "6", "3"], ["1", "2", "0"]]
+
+.Cycles: [["B", "C", "E"], ["B", "C", "D", "E"], ["D", "C"]]
+
+
+STOPS GOAL = 1
+
+Visited stack: ["C"], Next vertex: E
+Visited stack: ["C"], Next vertex: D
+
+--- Total paths for 1 stops: 0
+
+STOPS GOAL = 2
+
+Visited stack: ["C"], Next vertex: E
+
+*** Path: ["C", "D", "C"], Stops: 2, Length: 16
+*** Paths: [["C", "D", "C"]]
+
+Visited stack: ["C"], Next vertex: D
+
+--- Total paths for 2 stops: 1
+
+STOPS GOAL = 3
+
+Visited stack: ["C"], Next vertex: E
+
+*** Path: ["C", "E", "B", "C"], Stops: 3, Length: 9
+*** Paths: [["C", "E", "B", "C"]]
+
+Visited stack: ["C"], Next vertex: D
+
+--- Total paths for 3 stops: 1
+
+==> Total paths from C to C, for 1 to 3 stops: 2 <==
+
+Cycles: [["B", "C", "E"], ["B", "C", "D", "E"], ["D", "C"]]
+
+
+STOPS GOAL = 4
+
+Visited stack: ["A"], Next vertex: E
+Visited stack: ["A", "E"], Next vertex: B
+Visited stack: ["A", "E", "B"], Next vertex: C
+Visited stack: ["A", "E", "B", "C"], Next vertex: E
+Visited stack: ["A", "E", "B", "C"], Next vertex: D
+Visited stack: ["A"], Next vertex: D
+Visited stack: ["A", "D"], Next vertex: E
+Visited stack: ["A", "D", "E"], Next vertex: B
+Visited stack: ["A", "D", "E", "B"], Next vertex: C
+
+*** Path: ["A", "D", "E", "B", "C"], Stops: 4, Length: 18
+
+Visited stack: ["A", "D"], Next vertex: C
+Visited stack: ["A", "D", "C"], Next vertex: E
+
+*** Path: ["A", "D", "C", "D", "C"], Stops: 4, Length: 29
+*** Paths: [["A", "D", "C"], ["A", "D", "C", "D", "C"]]
+
+Visited stack: ["A", "D", "C"], Next vertex: D
+Visited stack: ["A"], Next vertex: B
+Visited stack: ["A", "B"], Next vertex: C
+Visited stack: ["A", "B", "C"], Next vertex: E
+
+*** Path: ["A", "B", "C", "D", "C"], Stops: 4, Length: 25
+*** Paths: [["A", "B", "C"], ["A", "D", "C", "D", "C"], ["A", "B", "C", "D", "C"]]
+
+Visited stack: ["A", "B", "C"], Next vertex: D
+
+--- Total paths for 4 stops: 3
+
+==> Total paths from A to C, for 4 to 4 stops: 3 <==
+
+Cycles: [["B", "C", "E"], ["B", "C", "D", "E"], ["D", "C"]]
+
+
+STOPS GOAL = 3
+
+Visited stack: ["A"], Next vertex: E
+Visited stack: ["A", "E"], Next vertex: B
+Visited stack: ["A", "E", "B"], Next vertex: C
+
+*** Path: ["A", "E", "B", "C"], Stops: 3, Length: 14
+
+Visited stack: ["A"], Next vertex: D
+Visited stack: ["A", "D"], Next vertex: E
+Visited stack: ["A", "D", "E"], Next vertex: B
+Visited stack: ["A", "D", "E", "B"], Next vertex: C
+Visited stack: ["A", "D"], Next vertex: C
+Visited stack: ["A", "D", "C"], Next vertex: E
+Visited stack: ["A", "D", "C"], Next vertex: D
+Visited stack: ["A"], Next vertex: B
+Visited stack: ["A", "B"], Next vertex: C
+Visited stack: ["A", "B", "C"], Next vertex: E
+Visited stack: ["A", "B", "C"], Next vertex: D
+
+--- Total paths for 3 stops: 1
+
+==> Total paths from A to C, for 3 to 3 stops: 1 <==
+
+Cycles: [["B", "C", "E"], ["B", "C", "D", "E"], ["D", "C"]]
+
+
+STOPS GOAL = 2
+
+Visited stack: ["A"], Next vertex: E
+Visited stack: ["A", "E"], Next vertex: B
+Visited stack: ["A", "E", "B"], Next vertex: C
+Visited stack: ["A"], Next vertex: D
+Visited stack: ["A", "D"], Next vertex: E
+Visited stack: ["A", "D", "E"], Next vertex: B
+Visited stack: ["A", "D"], Next vertex: C
+
+*** Path: ["A", "D", "C"], Stops: 2, Length: 13
+
+Visited stack: ["A"], Next vertex: B
+Visited stack: ["A", "B"], Next vertex: C
+
+*** Path: ["A", "B", "C"], Stops: 2, Length: 9
+
+
+--- Total paths for 2 stops: 2
+
+==> Total paths from A to C, for 2 to 2 stops: 2 <==
+
+Cycles: [["B", "C", "E"], ["B", "C", "D", "E"], ["D", "C"]]
+
+
+STOPS GOAL = 1
+
+Visited stack: ["A"], Next vertex: E
+Visited stack: ["A", "E"], Next vertex: B
+Visited stack: ["A"], Next vertex: D
+Visited stack: ["A", "D"], Next vertex: E
+Visited stack: ["A", "D"], Next vertex: C
+Visited stack: ["A"], Next vertex: B
+Visited stack: ["A", "B"], Next vertex: C
+
+--- Total paths for 1 stops: 0
+
+==> Total paths from A to C, for 1 to 1 stops: 0 <==
+
+Cycles: [["B", "C", "E"], ["B", "C", "D", "E"], ["D", "C"]]
+
+
+STOPS GOAL = 1
+
+Visited stack: ["A"], Next vertex: E
+Visited stack: ["A", "E"], Next vertex: B
+Visited stack: ["A"], Next vertex: D
+Visited stack: ["A", "D"], Next vertex: E
+Visited stack: ["A", "D"], Next vertex: C
+Visited stack: ["A"], Next vertex: B
+Visited stack: ["A", "B"], Next vertex: C
+
+--- Total paths for 1 stops: 0
+
+STOPS GOAL = 2
+
+Visited stack: ["A"], Next vertex: E
+Visited stack: ["A", "E"], Next vertex: B
+Visited stack: ["A", "E", "B"], Next vertex: C
+Visited stack: ["A"], Next vertex: D
+Visited stack: ["A", "D"], Next vertex: E
+Visited stack: ["A", "D", "E"], Next vertex: B
+Visited stack: ["A", "D"], Next vertex: C
+
+*** Path: ["A", "D", "C"], Stops: 2, Length: 13
+
+Visited stack: ["A"], Next vertex: B
+Visited stack: ["A", "B"], Next vertex: C
+
+*** Path: ["A", "B", "C"], Stops: 2, Length: 9
+
+
+--- Total paths for 2 stops: 2
+
+STOPS GOAL = 3
+
+Visited stack: ["A"], Next vertex: E
+Visited stack: ["A", "E"], Next vertex: B
+Visited stack: ["A", "E", "B"], Next vertex: C
+
+*** Path: ["A", "E", "B", "C"], Stops: 3, Length: 14
+
+Visited stack: ["A"], Next vertex: D
+Visited stack: ["A", "D"], Next vertex: E
+Visited stack: ["A", "D", "E"], Next vertex: B
+Visited stack: ["A", "D", "E", "B"], Next vertex: C
+Visited stack: ["A", "D"], Next vertex: C
+Visited stack: ["A", "D", "C"], Next vertex: E
+Visited stack: ["A", "D", "C"], Next vertex: D
+Visited stack: ["A"], Next vertex: B
+Visited stack: ["A", "B"], Next vertex: C
+Visited stack: ["A", "B", "C"], Next vertex: E
+Visited stack: ["A", "B", "C"], Next vertex: D
+
+--- Total paths for 3 stops: 1
+
+STOPS GOAL = 4
+
+Visited stack: ["A"], Next vertex: E
+Visited stack: ["A", "E"], Next vertex: B
+Visited stack: ["A", "E", "B"], Next vertex: C
+Visited stack: ["A", "E", "B", "C"], Next vertex: E
+Visited stack: ["A", "E", "B", "C"], Next vertex: D
+Visited stack: ["A"], Next vertex: D
+Visited stack: ["A", "D"], Next vertex: E
+Visited stack: ["A", "D", "E"], Next vertex: B
+Visited stack: ["A", "D", "E", "B"], Next vertex: C
+
+*** Path: ["A", "D", "E", "B", "C"], Stops: 4, Length: 18
+
+Visited stack: ["A", "D"], Next vertex: C
+Visited stack: ["A", "D", "C"], Next vertex: E
+
+*** Path: ["A", "D", "C", "D", "C"], Stops: 4, Length: 29
+*** Paths: [["A", "D", "C"], ["A", "D", "C", "D", "C"]]
+
+Visited stack: ["A", "D", "C"], Next vertex: D
+Visited stack: ["A"], Next vertex: B
+Visited stack: ["A", "B"], Next vertex: C
+Visited stack: ["A", "B", "C"], Next vertex: E
+
+*** Path: ["A", "B", "C", "D", "C"], Stops: 4, Length: 25
+*** Paths: [["A", "B", "C"], ["A", "D", "C", "D", "C"], ["A", "B", "C", "D", "C"]]
+
+Visited stack: ["A", "B", "C"], Next vertex: D
+
+--- Total paths for 4 stops: 3
+
+==> Total paths from A to C, for 1 to 4 stops: 6 <==
+
+Cycles: [["B", "C", "E"], ["B", "C", "D", "E"], ["D", "C"]]
+
+
+STOPS GOAL = 1
+
+Visited stack: ["A"], Next vertex: E
+Visited stack: ["A", "E"], Next vertex: B
+Visited stack: ["A"], Next vertex: D
+Visited stack: ["A", "D"], Next vertex: E
+Visited stack: ["A", "D"], Next vertex: C
+Visited stack: ["A"], Next vertex: B
+
+*** Path: ["A", "B"], Stops: 1, Length: 5
+
+
+--- Total paths for 1 stops: 1
+
+==> Total paths from A to B, for 1 to 1 stops: 1 <==
+
+
+STOPS GOAL = 4
+
+Visited stack: ["A"], Next vertex: C
+Visited stack: ["A", "C"], Next vertex: G
+Visited stack: ["A", "C", "G"], Next vertex: O
+Visited stack: ["A", "C", "G"], Next vertex: N
+Visited stack: ["A", "C"], Next vertex: F
+Visited stack: ["A", "C", "F"], Next vertex: M
+Visited stack: ["A", "C", "F"], Next vertex: L
+Visited stack: ["A", "C", "F", "L"], Next vertex: P
+
+*** Path: ["A", "C", "F", "L", "P"], Stops: 4, Length: 4
+
+Visited stack: ["A"], Next vertex: B
+Visited stack: ["A", "B"], Next vertex: E
+Visited stack: ["A", "B", "E"], Next vertex: I
+Visited stack: ["A", "B", "E", "I"], Next vertex: P
+
+*** Path: ["A", "B", "E", "I", "P"], Stops: 4, Length: 4
+
+Visited stack: ["A", "B", "E"], Next vertex: K
+Visited stack: ["A", "B", "E"], Next vertex: J
+Visited stack: ["A", "B"], Next vertex: D
+Visited stack: ["A", "B", "D"], Next vertex: I
+Visited stack: ["A", "B", "D", "I"], Next vertex: P
+
+*** Path: ["A", "B", "D", "I", "P"], Stops: 4, Length: 4
+
+Visited stack: ["A", "B", "D"], Next vertex: H
+
+--- Total paths for 4 stops: 3
+
+==> Total paths from A to P, for 4 to 4 stops: 3 <==
+
+Cycles: [["B", "C", "E"], ["B", "C", "D", "E"], ["D", "C"]]
+
+
+STOPS GOAL = 3
+
+Visited stack: ["B"], Next vertex: C
+
+*** Path: ["B", "C", "E", "B"], Stops: 3, Length: 9
+*** Paths: [["B", "C", "E", "B"]]
+
+
+--- Total paths for 3 stops: 1
+
+STOPS GOAL = 4
+
+Visited stack: ["B"], Next vertex: C
+
+*** Path: ["B", "C", "D", "E", "B"], Stops: 4, Length: 21
+*** Paths: [["B", "C", "D", "E", "B"]]
+
+
+--- Total paths for 4 stops: 1
+
+==> Total paths from B to B, for 3 to 4 stops: 2 <==
+
+Cycles: [["B", "C", "E"], ["B", "C", "D", "E"], ["D", "C"]]
+
+
+STOPS GOAL = 2
+
+Visited stack: ["D"], Next vertex: E
+
+*** Path: ["D", "C", "D"], Stops: 2, Length: 16
+*** Paths: [["D", "C", "D"]]
+
+Visited stack: ["D"], Next vertex: C
+
+--- Total paths for 2 stops: 1
+
+STOPS GOAL = 3
+
+Visited stack: ["D"], Next vertex: E
+Visited stack: ["D"], Next vertex: C
+
+--- Total paths for 3 stops: 0
+
+STOPS GOAL = 4
+
+Visited stack: ["D"], Next vertex: E
+
+*** Path: ["D", "E", "B", "C", "D"], Stops: 4, Length: 21
+*** Paths: [["D", "E", "B", "C", "D"]]
+
+
+*** Path: ["D", "C", "D", "C", "D"], Stops: 4, Length: 32
+*** Paths: [["D", "E", "B", "C", "D"], ["D", "C", "D", "C", "D"]]
+
+Visited stack: ["D"], Next vertex: C
+
+--- Total paths for 4 stops: 2
+
+==> Total paths from D to D, for 2 to 4 stops: 3 <==
+
+Cycles: [["B", "C", "E"], ["B", "C", "D", "E"], ["D", "C"]]
+
+
+STOPS GOAL = 3
+
+Visited stack: ["E"], Next vertex: B
+
+*** Path: ["E", "B", "C", "E"], Stops: 3, Length: 9
+*** Paths: [["E", "B", "C", "E"]]
+
+
+--- Total paths for 3 stops: 1
+
+STOPS GOAL = 4
+
+Visited stack: ["E"], Next vertex: B
+
+*** Path: ["E", "B", "C", "D", "E"], Stops: 4, Length: 21
+*** Paths: [["E", "B", "C", "D", "E"]]
+
+
+--- Total paths for 4 stops: 1
+
+==> Total paths from E to E, for 3 to 4 stops: 2 <==
+
+Cycles: [["B", "C", "E"], ["B", "C", "D", "E"], ["D", "C"]]
+
+
+STOPS GOAL = 9
+
+Visited stack: ["C"], Next vertex: E
+
+*** Path: ["C", "E", "B", "C", "E", "B", "C", "E", "B", "C"], Stops: 9, Length: 27
+*** Paths: [["C", "E", "B", "C", "E", "B", "C", "E", "B", "C"]]
+
+
+*** Path: ["C", "E", "B", "C", "D", "C", "D", "C", "D", "C"], Stops: 9, Length: 57
+*** Paths: [["C", "E", "B", "C", "E", "B", "C", "E", "B", "C"], ["C", "E", "B", "C", "D", "C", "D", "C", "D", "C"]]
+
+Visited stack: ["C"], Next vertex: D
+
+--- Total paths for 9 stops: 2
+
+==> Total paths from C to C, for 9 to 9 stops: 2 <==
+
+Cycles: [["B", "C", "E"], ["B", "C", "D", "E"], ["D", "C"]]
+
+
+STOPS GOAL = 1
+
+Visited stack: ["C"], Next vertex: E
+Visited stack: ["C"], Next vertex: D
+
+--- Total paths for 1 stops: 0
+
+STOPS GOAL = 2
+
+Visited stack: ["C"], Next vertex: E
+
+*** Path: ["C", "D", "C"], Stops: 2, Length: 16
+*** Paths: [["C", "D", "C"]]
+
+Visited stack: ["C"], Next vertex: D
+
+--- Total paths for 2 stops: 1
+
+STOPS GOAL = 3
+
+Visited stack: ["C"], Next vertex: E
+
+*** Path: ["C", "E", "B", "C"], Stops: 3, Length: 9
+*** Paths: [["C", "E", "B", "C"]]
+
+Visited stack: ["C"], Next vertex: D
+
+--- Total paths for 3 stops: 1
+
+STOPS GOAL = 4
+
+Visited stack: ["C"], Next vertex: E
+
+*** Path: ["C", "D", "E", "B", "C"], Stops: 4, Length: 21
+*** Paths: [["C", "D", "E", "B", "C"]]
+
+
+*** Path: ["C", "D", "C", "D", "C"], Stops: 4, Length: 32
+*** Paths: [["C", "D", "E", "B", "C"], ["C", "D", "C", "D", "C"]]
+
+Visited stack: ["C"], Next vertex: D
+
+--- Total paths for 4 stops: 2
+
+STOPS GOAL = 5
+
+Visited stack: ["C"], Next vertex: E
+
+*** Path: ["C", "E", "B", "C", "D", "C"], Stops: 5, Length: 25
+*** Paths: [["C", "E", "B", "C", "D", "C"]]
+
+
+*** Path: ["C", "D", "C", "E", "B", "C"], Stops: 5, Length: 25
+*** Paths: [["C", "E", "B", "C", "D", "C"], ["C", "D", "C", "E", "B", "C"]]
+
+Visited stack: ["C"], Next vertex: D
+
+--- Total paths for 5 stops: 2
+
+STOPS GOAL = 6
+
+Visited stack: ["C"], Next vertex: E
+
+*** Path: ["C", "E", "B", "C", "E", "B", "C"], Stops: 6, Length: 18
+*** Paths: [["C", "E", "B", "C", "E", "B", "C"]]
+
+
+*** Path: ["C", "D", "E", "B", "C", "D", "C"], Stops: 6, Length: 37
+*** Paths: [["C", "E", "B", "C", "E", "B", "C"], ["C", "D", "E", "B", "C", "D", "C"]]
+
+
+*** Path: ["C", "D", "C", "D", "E", "B", "C"], Stops: 6, Length: 37
+*** Paths: [["C", "E", "B", "C", "E", "B", "C"], ["C", "D", "E", "B", "C", "D", "C"], ["C", "D", "C", "D", "E", "B", "C"]]
+
+
+*** Path: ["C", "D", "C", "D", "C", "D", "C"], Stops: 6, Length: 48
+*** Paths: [["C", "E", "B", "C", "E", "B", "C"], ["C", "D", "E", "B", "C", "D", "C"], ["C", "D", "C", "D", "E", "B", "C"], ["C", "D", "C", "D", "C", "D", "C"]]
+
+Visited stack: ["C"], Next vertex: D
+
+--- Total paths for 6 stops: 4
+
+STOPS GOAL = 7
+
+Visited stack: ["C"], Next vertex: E
+
+*** Path: ["C", "E", "B", "C", "D", "E", "B", "C"], Stops: 7, Length: 30
+*** Paths: [["C", "E", "B", "C", "D", "E", "B", "C"]]
+
+
+*** Path: ["C", "E", "B", "C", "D", "C", "D", "C"], Stops: 7, Length: 41
+*** Paths: [["C", "E", "B", "C", "D", "E", "B", "C"], ["C", "E", "B", "C", "D", "C", "D", "C"]]
+
+
+*** Path: ["C", "D", "E", "B", "C", "E", "B", "C"], Stops: 7, Length: 30
+*** Paths: [["C", "E", "B", "C", "D", "E", "B", "C"], ["C", "E", "B", "C", "D", "C", "D", "C"], ["C", "D", "E", "B", "C", "E", "B", "C"]]
+
+Visited stack: ["C"], Next vertex: D
+
+--- Total paths for 7 stops: 3
+
+STOPS GOAL = 8
+
+Visited stack: ["C"], Next vertex: E
+
+*** Path: ["C", "D", "E", "B", "C", "D", "E", "B", "C"], Stops: 8, Length: 42
+*** Paths: [["C", "D", "E", "B", "C", "D", "E", "B", "C"]]
+
+
+*** Path: ["C", "D", "E", "B", "C", "D", "C", "D", "C"], Stops: 8, Length: 53
+*** Paths: [["C", "D", "E", "B", "C", "D", "E", "B", "C"], ["C", "D", "E", "B", "C", "D", "C", "D", "C"]]
+
+
+*** Path: ["C", "D", "C", "E", "B", "C", "E", "B", "C"], Stops: 8, Length: 34
+*** Paths: [["C", "D", "E", "B", "C", "D", "E", "B", "C"], ["C", "D", "E", "B", "C", "D", "C", "D", "C"], ["C", "D", "C", "E", "B", "C", "E", "B", "C"]]
+
+
+*** Path: ["C", "D", "C", "D", "C", "D", "C", "D", "C"], Stops: 8, Length: 64
+*** Paths: [["C", "D", "E", "B", "C", "D", "E", "B", "C"], ["C", "D", "E", "B", "C", "D", "C", "D", "C"], ["C", "D", "C", "E", "B", "C", "E", "B", "C"], ["C", "D", "C", "D", "C", "D", "C", "D", "C"]]
+
+Visited stack: ["C"], Next vertex: D
+
+--- Total paths for 8 stops: 4
+
+STOPS GOAL = 9
+
+Visited stack: ["C"], Next vertex: E
+
+*** Path: ["C", "E", "B", "C", "E", "B", "C", "E", "B", "C"], Stops: 9, Length: 27
+*** Paths: [["C", "E", "B", "C", "E", "B", "C", "E", "B", "C"]]
+
+
+*** Path: ["C", "E", "B", "C", "D", "C", "D", "C", "D", "C"], Stops: 9, Length: 57
+*** Paths: [["C", "E", "B", "C", "E", "B", "C", "E", "B", "C"], ["C", "E", "B", "C", "D", "C", "D", "C", "D", "C"]]
+
+Visited stack: ["C"], Next vertex: D
+
+--- Total paths for 9 stops: 2
+
+==> Total paths from C to C, for 1 to 9 stops: 19 <==
+
+.Cycles: [["B", "C", "E"], ["B", "C", "D", "E"], ["D", "C"]]
+
+MAX DISTANCE = 30
+
+Visited stack: ["C"], Next vertex: E
+
+*** Path: ["C", "E", "B", "C"], Length: 9
+*** Paths: [["C", "E", "B", "C"]]
+
+
+*** Path: ["C", "E", "B", "C", "E", "B", "C"], Length: 18
+*** Paths: [["C", "E", "B", "C"], ["C", "E", "B", "C", "E", "B", "C"]]
+
+
+*** Path: ["C", "E", "B", "C", "E", "B", "C", "E", "B", "C"], Length: 27
+*** Paths: [["C", "E", "B", "C"], ["C", "E", "B", "C", "E", "B", "C"], ["C", "E", "B", "C", "E", "B", "C", "E", "B", "C"]]
+
+
+*** Path: ["C", "E", "B", "C", "D", "C"], Length: 25
+*** Paths: [["C", "E", "B", "C"], ["C", "E", "B", "C", "E", "B", "C"], ["C", "E", "B", "C", "E", "B", "C", "E", "B", "C"], ["C", "E", "B", "C", "D", "C"]]
+
+
+*** Path: ["C", "D", "E", "B", "C"], Length: 21
+*** Paths: [["C", "E", "B", "C"], ["C", "E", "B", "C", "E", "B", "C"], ["C", "E", "B", "C", "E", "B", "C", "E", "B", "C"], ["C", "E", "B", "C", "D", "C"], ["C", "D", "E", "B", "C"]]
+
+
+*** Path: ["C", "D", "C"], Length: 16
+*** Paths: [["C", "E", "B", "C"], ["C", "E", "B", "C", "E", "B", "C"], ["C", "E", "B", "C", "E", "B", "C", "E", "B", "C"], ["C", "E", "B", "C", "D", "C"], ["C", "D", "E", "B", "C"], ["C", "D", "C"]]
+
+
+*** Path: ["C", "D", "C", "E", "B", "C"], Length: 25
+*** Paths: [["C", "E", "B", "C"], ["C", "E", "B", "C", "E", "B", "C"], ["C", "E", "B", "C", "E", "B", "C", "E", "B", "C"], ["C", "E", "B", "C", "D", "C"], ["C", "D", "E", "B", "C"], ["C", "D", "C"], ["C", "D", "C", "E", "B", "C"]]
+
+Visited stack: ["C"], Next vertex: D
+
+==> Total paths from C to C, with distance < 30: 7
+
+.........
+
+Finished in 0.24701 seconds
+25 examples, 0 failures

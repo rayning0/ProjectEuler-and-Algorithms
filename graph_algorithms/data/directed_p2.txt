@@ -1,0 +1,23 @@
+directed
+8
+A
+B
+C
+D
+E
+F
+G
+H
+B A 1
+C B 1
+C D 1
+E F 1
+E A 1
+F G 1
+F B 1
+F A 1
+G C 1
+G H 1
+G B 1
+H C 1
+H D 1

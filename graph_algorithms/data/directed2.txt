@@ -1,0 +1,35 @@
+directed
+16
+A
+B
+C
+D
+E
+F
+G
+H
+I
+J
+K
+L
+M
+N
+O
+P
+A B 1
+A C 1
+B D 1
+B E 1
+C F 1
+C G 1
+D H 1
+D I 1
+E J 1
+E K 1
+F L 1
+F M 1
+G N 1
+G O 1
+L P 1
+E I 1
+I P 1
