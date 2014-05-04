@@ -7,7 +7,7 @@ require 'benchmark'
 require 'json'
 
 def sieve(n)    # makes array of all primes from 2 to n
-  s = 3.step(n, 2).to_a # make array of odd integers from 3 to n. Skip evens. 
+  s = 3.step(n, 2).to_a # make array of odd integers from 3 to n. Skip evens.
   s.each do |p|
     next if p.nil?       # go to next element if p has been marked empty
     break if p * p > n   # p only needs to go up to sqrt(n)
@@ -19,13 +19,13 @@ def sieve(n)    # makes array of all primes from 2 to n
 
       # Set all those multiples to nil. i = (pval - 3)/2 translates pvals to index i
 
-      s[(pval - 3) / 2] = nil 
-      k += 2  
+      s[(pval - 3) / 2] = nil
+      k += 2
     end
 
   end
   s.compact!    # removes all nil elements from array
-  s.unshift(2).sort  # adds 2 as 1st element
+  s.unshift(2)  # adds 2 as 1st element
 end
 
 def is_prime?(n)
@@ -43,39 +43,39 @@ def is_prime?(n)
   true
 end
 
+def benchmark_primes
+  puts "Enter n. I'll make an array of primes up till n:"
+  n = gets.chomp.to_i
+  puts
+  s = sieve(n)
+  puts "Array size = #{s.size}"
+  puts "Putting it in text file...(WARNING: this may create a HUGE file that uses up all your memory! May need to reboot.)"
+  File.open('sieveprimes-serialized.txt', 'w') {|f| f.write(Marshal.dump(s))}
+  File.open('jsonprimes.txt', 'w') {|f| f.write(s.to_json)}
 
-puts "Enter n. I'll make an array of primes up till n:"
-n = gets.chomp.to_i
-puts
-s = sieve(n)
-puts "Array size = #{s.size}"
-puts "Putting it in text file...(WARNING: this may create a HUGE file that uses up all your memory! May need to reboot.)"
-File.open('sieveprimes-serialized.txt', 'w') {|f| f.write(Marshal.dump(s))}
-File.open('jsonprimes.txt', 'w') {|f| f.write(s.to_json)}
+  puts "Enter n. I'll tell you if it's prime"
+  n = gets.chomp.to_i
 
-puts "Enter n. I'll tell you if it's prime"
-n = gets.chomp.to_i
+  Benchmark.bm(27) do |bm|
+    bm.report("Using is_prime method. ") do     # Fastest!
+      puts "Prime? #{is_prime?(n)}"
+    end
 
-Benchmark.bm(27) do |bm|
-  bm.report("Using is_prime method. ") do     # Fastest!
-    puts "Prime? #{is_prime?(n)}"
-  end
+    bm.report("Read in primes from serialized file. ") do
+      t = Marshal.load File.read('sieveprimes-serialized.txt')
 
-  bm.report("Read in primes from serialized file. ") do
-    t = Marshal.load File.read('sieveprimes-serialized.txt')
+      # uses Sieve of Eratosthenes file to check if prime. Slower.
+      prime = t.any? {|i| i == n}
+      puts "Prime? #{prime}"
+    end
 
-    # uses Sieve of Eratosthenes file to check if prime. Slower.
-    prime = t.any? {|i| i == n}
-    puts "Prime? #{prime}"
-  end
-
-  bm.report("Read in primes from JSON file. ") do   # Slowest!
-    j = JSON.parse(File.read('jsonprimes.txt'))
-    prime = j.any? {|i| i == n}
-    puts "Prime? #{prime}"
+    bm.report("Read in primes from JSON file. ") do   # Slowest!
+      j = JSON.parse(File.read('jsonprimes.txt'))
+      prime = j.any? {|i| i == n}
+      puts "Prime? #{prime}"
+    end
   end
 end
-
 
 
 =begin
@@ -88,7 +88,7 @@ end
 
 =begin
 
-0, 1, 2, 3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20  = i 
+0, 1, 2, 3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20  = i
 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43  = 2i + 3
 
 p*p, p*p + 2p, p*p + 4p, p*p + 6p, etc... = p(p + k), k = even numbers
