@@ -1,7 +1,8 @@
 # http://projecteuler.net/problem=81
-require_relative './priority_queue'
+# Find the minimal path sum, in matrix.txt, containing a 80 by 80 matrix, from the top
+# left to the bottom right by only moving right and down.
 
-# Dijkstra's algorithm
+# Dijkstra's algorithm with priority queue
 class PathSum
   INPUT_FILE = './081_matrix.txt'
   ROWS, COLS = 80, 80
