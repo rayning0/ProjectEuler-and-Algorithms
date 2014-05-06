@@ -3,6 +3,7 @@
 # left to the bottom right by only moving right and down.
 
 # Dijkstra's algorithm with priority queue
+require 'pry'
 class PathSum
   INPUT_FILE = './081_matrix.txt'
   ROWS, COLS = 80, 80
@@ -47,6 +48,7 @@ class PathSum
 
       # Go through each adjacent node
       [downrow, rightcol].each do |node|
+        next if node.nil?
         alt_distance = dist[row][col] + matrix[node[0]][node[1]]
 
         # if total dist to each adj node < min dist to there now, replace min dist at node
