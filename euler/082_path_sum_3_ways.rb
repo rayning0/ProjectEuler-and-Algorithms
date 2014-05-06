@@ -1,6 +1,6 @@
 # http://projecteuler.net/problem=82
 # Find the minimal path sum, in matrix.txt, containing a 80 by 80 matrix, from the
-# left column to right column by only moving up, down, and right.
+# left column to right column by moving 3 ways (up, down, and right).
 
 # Dijkstra's algorithm with priority queue
 class PathSum
@@ -82,13 +82,9 @@ class PathSum
     puts "Shortest Path: #{min_path}"
   end
 
-  def dist_left_up_down(row, col)
-    begin
-      return INFINITY if row < 0 || col < 0
-      dist[row][col]
-    rescue NoMethodError
-      INFINITY  # if row or col is out of bounds, return INFINITY
-    end
+  def dist_3_ways(row, col)
+    return INFINITY unless row.between?(0, ROWS - 1) && col.between?(start[1], finish[1])
+    dist[row][col]
   end
 
   def print_path(row, col)
@@ -98,9 +94,9 @@ class PathSum
     until row == start[0] && col == start[1]
       final_path.unshift([row, col])
 
-      left = dist_left_up_down(row, col - 1)
-      up = dist_left_up_down(row - 1, col)
-      down = dist_left_up_down(row + 1, col)
+      left = dist_3_ways(row, col - 1)
+      up = dist_3_ways(row - 1, col)
+      down = dist_3_ways(row + 1, col)
 
       # min total distance value, in LEFT, UP, and DOWN directions
       min = [left, up, down].each_with_index.min.last
