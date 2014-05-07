@@ -9,7 +9,8 @@
 # Otherwise, we go over our 9 digit limit.
 
 # We have 920 nums from 2 to 987 with up to 4 unique digits and no 0's.
-factors = [*2..1987].map(&:to_s).reject { |n| n =~ /0/ }.select { |n| n.chars.uniq == n.chars }
+t = Time.now
+@factors = [*2..1987].map(&:to_s).reject { |n| n =~ /0/ }.select { |n| n.chars.uniq == n.chars }
 
 def prod(factor1, factor2)
   factor1.to_i * factor2.to_i
@@ -24,13 +25,13 @@ def pandigital?(factor1, factor2)
   true
 end
 
-fpairs = []
-factors.each do |f1|
-  f1_index = factors.index(f1)
-  factors[f1_index + 1..-1].each do |f2|
-    fpairs << [f1, f2]
+  fpairs = []
+  @factors.each do |f1|
+    f1_index = @factors.index(f1)
+    @factors[f1_index + 1..-1].each do |f2|
+      fpairs << [f1, f2]
+    end
   end
-end
 
 products = []
 # nested array of factor pairs: [['39', '186'], ['41', '52'], ...]
@@ -39,9 +40,9 @@ fpairs.each do |fpair|
     p = prod(fpair[0], fpair[1])
     unless products.include?(p)
       products << p
-      puts "ppair: #{fpair[0]} #{fpair[1]}, prod: #{p}"
+      #puts "ppair: #{fpair[0]} #{fpair[1]}, prod: #{p}"
     end
   end
 end
 
-puts "Answer: #{products.inject(&:+)}"
+puts "Answer: #{products.inject(&:+)}, Time: #{Time.now - t} secs"
