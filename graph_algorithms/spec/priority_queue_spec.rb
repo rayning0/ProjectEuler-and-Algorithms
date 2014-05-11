@@ -38,25 +38,4 @@ describe PriorityQueue do
       expect(@p.pop).to be_nil
     end
   end
-
-  describe '#contains?' do
-    it 'checks if queue contains key' do
-      expect(@p.contains?('Z')).to eq(true)
-      expect(@p.contains?('A')).to eq(false)
-    end
-  end
-
-  describe '#size' do
-    it 'returns size of queue' do
-      expect(@p.size).to eq(3)
-    end
-  end
-
-  describe '#empty?' do
-    it 'checks if queue is empty' do
-      q = PriorityQueue.new
-      expect(q.empty?).to eq(true)
-      expect(@p.empty?).to eq(false)
-    end
-  end
 end
