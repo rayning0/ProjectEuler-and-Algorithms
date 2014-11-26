@@ -20,7 +20,7 @@ etc........
 =end
 
 INPUT_FILE = 'rspec_maker_input.txt'
-OUTPUT_DIR = '../spec/'
+OUTPUT_DIR = './spec/'
 
 class RSpecMaker
   attr_accessor :filename, :classname, :method, :data_in, :data_out, :line

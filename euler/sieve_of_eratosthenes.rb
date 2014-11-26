@@ -77,14 +77,9 @@ def benchmark_primes
   end
 end
 
-
 =begin
 # sum all primes
 # puts "Sum of all primes: #{s.inject(:+)}"
-
-
-
-
 
 =begin
 
