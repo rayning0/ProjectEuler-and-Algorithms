@@ -4,13 +4,9 @@ def merge_sort(list)
   middle = list.length / 2
   left = list[0..middle - 1]
   right = list[middle..-1]
-  p "left = #{left}"
-  p "right= #{right}"
   left = merge_sort(left)
   right = merge_sort(right)
-  m = merge(left, right)
-  p "m = #{m}"
-  m
+  merge(left, right)
 end
 
 def merge(left, right)
