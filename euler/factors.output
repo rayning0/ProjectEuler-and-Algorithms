@@ -1,0 +1,809 @@
+>> ruby factors_compare_speeds.rb
+Compare speed of factors vs. factors_cache methods:
+Time (no cache): 5.1e-05. Time (cache): 2.4e-05.
+cache wins
+
+Time (no cache): 2.1e-05. Time (cache): 2.2e-05.
+no cache wins
+
+Time (no cache): 1.9e-05. Time (cache): 2.3e-05.
+no cache wins
+
+Time (no cache): 3.8e-05. Time (cache): 3.4e-05.
+cache wins
+
+Time (no cache): 2.1e-05. Time (cache): 2.3e-05.
+no cache wins
+
+Time (no cache): 1.4e-05. Time (cache): 1.3e-05.
+cache wins
+
+Time (no cache): 2.1e-05. Time (cache): 8.0e-06.
+cache wins
+
+Time (no cache): 2.0e-05. Time (cache): 9.0e-06.
+cache wins
+
+Time (no cache): 9.0e-06. Time (cache): 9.0e-06.
+no cache wins
+
+Time (no cache): 1.8e-05. Time (cache): 9.0e-06.
+cache wins
+
+Time (no cache): 2.4e-05. Time (cache): 2.5e-05.
+no cache wins
+
+Time (no cache): 2.3e-05. Time (cache): 2.0e-05.
+cache wins
+
+Time (no cache): 1.3e-05. Time (cache): 1.2e-05.
+cache wins
+
+Time (no cache): 2.3e-05. Time (cache): 2.8e-05.
+no cache wins
+
+Time (no cache): 1.5e-05. Time (cache): 1.0e-05.
+cache wins
+
+Time (no cache): 4.0e-05. Time (cache): 9.0e-06.
+cache wins
+
+Time (no cache): 1.9e-05. Time (cache): 2.2e-05.
+no cache wins
+
+Time (no cache): 2.0e-05. Time (cache): 1.6e-05.
+cache wins
+
+Time (no cache): 2.2e-05. Time (cache): 1.9e-05.
+cache wins
+
+Time (no cache): 1.1e-05. Time (cache): 9.0e-06.
+cache wins
+
+Time (no cache): 1.6e-05. Time (cache): 1.0e-05.
+cache wins
+
+Time (no cache): 1.3e-05. Time (cache): 1.5e-05.
+no cache wins
+
+Time (no cache): 2.1e-05. Time (cache): 9.0e-06.
+cache wins
+
+Time (no cache): 1.7e-05. Time (cache): 2.1e-05.
+no cache wins
+
+Time (no cache): 2.5e-05. Time (cache): 1.5e-05.
+cache wins
+
+Time (no cache): 1.7e-05. Time (cache): 2.1e-05.
+no cache wins
+
+Time (no cache): 1.9e-05. Time (cache): 1.9e-05.
+no cache wins
+
+Time (no cache): 1.3e-05. Time (cache): 2.2e-05.
+no cache wins
+
+Time (no cache): 2.3e-05. Time (cache): 2.4e-05.
+no cache wins
+
+Time (no cache): 1.6e-05. Time (cache): 7.0e-06.
+cache wins
+
+Time (no cache): 2.1e-05. Time (cache): 1.0e-05.
+cache wins
+
+Time (no cache): 1.6e-05. Time (cache): 3.6e-05.
+no cache wins
+
+Time (no cache): 2.2e-05. Time (cache): 1.0e-05.
+cache wins
+
+Time (no cache): 1.9e-05. Time (cache): 2.3e-05.
+no cache wins
+
+Time (no cache): 2.3e-05. Time (cache): 1.1e-05.
+cache wins
+
+Time (no cache): 8.0e-06. Time (cache): 1.0e-05.
+no cache wins
+
+Time (no cache): 2.0e-05. Time (cache): 2.4e-05.
+no cache wins
+
+Time (no cache): 1.0e-05. Time (cache): 1.0e-05.
+no cache wins
+
+Time (no cache): 1.5e-05. Time (cache): 1.0e-05.
+cache wins
+
+Time (no cache): 1.7e-05. Time (cache): 1.1e-05.
+cache wins
+
+Time (no cache): 2.3e-05. Time (cache): 2.8e-05.
+no cache wins
+
+Time (no cache): 2.4e-05. Time (cache): 2.8e-05.
+no cache wins
+
+Time (no cache): 1.9e-05. Time (cache): 2.3e-05.
+no cache wins
+
+Time (no cache): 1.4e-05. Time (cache): 1.0e-05.
+cache wins
+
+Time (no cache): 1.5e-05. Time (cache): 7.0e-06.
+cache wins
+
+Time (no cache): 1.9e-05. Time (cache): 1.0e-05.
+cache wins
+
+Time (no cache): 2.1e-05. Time (cache): 1.0e-05.
+cache wins
+
+Time (no cache): 1.5e-05. Time (cache): 1.0e-05.
+cache wins
+
+Time (no cache): 0.000723. Time (cache): 2.9e-05.
+cache wins
+
+Time (no cache): 1.7e-05. Time (cache): 8.0e-06.
+cache wins
+
+Time (no cache): 1.9e-05. Time (cache): 1.0e-05.
+cache wins
+
+Time (no cache): 2.3e-05. Time (cache): 2.2e-05.
+cache wins
+
+Time (no cache): 1.3e-05. Time (cache): 1.0e-05.
+cache wins
+
+Time (no cache): 1.5e-05. Time (cache): 9.0e-06.
+cache wins
+
+Time (no cache): 1.8e-05. Time (cache): 2.3e-05.
+no cache wins
+
+Time (no cache): 1.5e-05. Time (cache): 9.0e-06.
+cache wins
+
+Time (no cache): 1.5e-05. Time (cache): 9.0e-06.
+cache wins
+
+Time (no cache): 2.5e-05. Time (cache): 1.0e-05.
+cache wins
+
+Time (no cache): 2.0e-05. Time (cache): 2.3e-05.
+no cache wins
+
+Time (no cache): 2.5e-05. Time (cache): 2.1e-05.
+cache wins
+
+Time (no cache): 2.8e-05. Time (cache): 3.4e-05.
+no cache wins
+
+Time (no cache): 2.2e-05. Time (cache): 2.2e-05.
+no cache wins
+
+Time (no cache): 9.0e-06. Time (cache): 9.0e-06.
+no cache wins
+
+Time (no cache): 2.3e-05. Time (cache): 1.5e-05.
+cache wins
+
+Time (no cache): 2.1e-05. Time (cache): 9.1e-05.
+no cache wins
+
+Time (no cache): 2.0e-05. Time (cache): 1.0e-05.
+cache wins
+
+Time (no cache): 2.4e-05. Time (cache): 2.8e-05.
+no cache wins
+
+Time (no cache): 2.0e-05. Time (cache): 1.0e-05.
+cache wins
+
+Time (no cache): 1.6e-05. Time (cache): 9.0e-06.
+cache wins
+
+Time (no cache): 2.2e-05. Time (cache): 1.7e-05.
+cache wins
+
+Time (no cache): 1.1e-05. Time (cache): 1.0e-05.
+cache wins
+
+Time (no cache): 1.2e-05. Time (cache): 9.0e-06.
+cache wins
+
+Time (no cache): 1.4e-05. Time (cache): 9.0e-06.
+cache wins
+
+Time (no cache): 1.8e-05. Time (cache): 7.0e-06.
+cache wins
+
+Time (no cache): 1.6e-05. Time (cache): 2.0e-05.
+no cache wins
+
+Time (no cache): 2.4e-05. Time (cache): 1.0e-05.
+cache wins
+
+Time (no cache): 2.1e-05. Time (cache): 9.0e-06.
+cache wins
+
+Time (no cache): 2.7e-05. Time (cache): 1.7e-05.
+cache wins
+
+Time (no cache): 1.4e-05. Time (cache): 9.0e-06.
+cache wins
+
+Time (no cache): 1.9e-05. Time (cache): 8.0e-06.
+cache wins
+
+Time (no cache): 1.4e-05. Time (cache): 1.7e-05.
+no cache wins
+
+Time (no cache): 7.0e-05. Time (cache): 1.9e-05.
+cache wins
+
+Time (no cache): 1.9e-05. Time (cache): 1.6e-05.
+cache wins
+
+Time (no cache): 1.5e-05. Time (cache): 9.0e-06.
+cache wins
+
+Time (no cache): 1.7e-05. Time (cache): 1.7e-05.
+no cache wins
+
+Time (no cache): 2.1e-05. Time (cache): 1.0e-05.
+cache wins
+
+Time (no cache): 1.4e-05. Time (cache): 7.0e-06.
+cache wins
+
+Time (no cache): 1.2e-05. Time (cache): 9.0e-06.
+cache wins
+
+Time (no cache): 2.3e-05. Time (cache): 1.6e-05.
+cache wins
+
+Time (no cache): 1.2e-05. Time (cache): 1.0e-05.
+cache wins
+
+Time (no cache): 1.1e-05. Time (cache): 1.0e-05.
+cache wins
+
+Time (no cache): 2.1e-05. Time (cache): 2.7e-05.
+no cache wins
+
+Time (no cache): 1.6e-05. Time (cache): 2.2e-05.
+no cache wins
+
+Time (no cache): 2.0e-05. Time (cache): 2.4e-05.
+no cache wins
+
+Time (no cache): 1.3e-05. Time (cache): 9.0e-06.
+cache wins
+
+Time (no cache): 1.9e-05. Time (cache): 2.4e-05.
+no cache wins
+
+Time (no cache): 1.2e-05. Time (cache): 1.0e-05.
+cache wins
+
+Time (no cache): 2.0e-05. Time (cache): 1.0e-05.
+cache wins
+
+Time (no cache): 1.7e-05. Time (cache): 7.0e-06.
+cache wins
+
+Time (no cache): 2.7e-05. Time (cache): 2.4e-05.
+cache wins
+
+65 cache wins. 35 no cache wins.
+
+Compare speed of get_factors vs. get_factors_cache methods:
+Time (no cache): 9.9e-05. Time (cache): 1.0e-05.
+cache wins
+Time (no cache): 8.4e-05. Time (cache): 3.7e-05.
+cache wins
+Time (no cache): 0.000121. Time (cache): 4.3e-05.
+cache wins
+Time (no cache): 0.000108. Time (cache): 5.8e-05.
+cache wins
+Time (no cache): 0.000255. Time (cache): 5.2e-05.
+cache wins
+Time (no cache): 0.000118. Time (cache): 1.0e-05.
+cache wins
+Time (no cache): 0.000139. Time (cache): 9.7e-05.
+cache wins
+Time (no cache): 0.000106. Time (cache): 8.0e-06.
+cache wins
+Time (no cache): 0.000102. Time (cache): 3.2e-05.
+cache wins
+Time (no cache): 7.5e-05. Time (cache): 3.3e-05.
+cache wins
+Time (no cache): 0.000127. Time (cache): 3.7e-05.
+cache wins
+Time (no cache): 0.000101. Time (cache): 4.6e-05.
+cache wins
+Time (no cache): 0.000111. Time (cache): 9.0e-06.
+cache wins
+Time (no cache): 0.000119. Time (cache): 6.6e-05.
+cache wins
+Time (no cache): 0.000114. Time (cache): 5.2e-05.
+cache wins
+Time (no cache): 0.000104. Time (cache): 3.1e-05.
+cache wins
+Time (no cache): 0.000138. Time (cache): 3.6e-05.
+cache wins
+Time (no cache): 9.9e-05. Time (cache): 3.6e-05.
+cache wins
+Time (no cache): 0.000148. Time (cache): 0.00012.
+cache wins
+Time (no cache): 0.000152. Time (cache): 3.6e-05.
+cache wins
+Time (no cache): 0.000948. Time (cache): 7.0e-05.
+cache wins
+Time (no cache): 0.000163. Time (cache): 4.9e-05.
+cache wins
+Time (no cache): 0.000103. Time (cache): 3.8e-05.
+cache wins
+Time (no cache): 0.000115. Time (cache): 3.6e-05.
+cache wins
+Time (no cache): 8.8e-05. Time (cache): 9.0e-06.
+cache wins
+Time (no cache): 0.000102. Time (cache): 6.0e-05.
+cache wins
+Time (no cache): 0.000147. Time (cache): 1.0e-05.
+cache wins
+Time (no cache): 0.000108. Time (cache): 4.2e-05.
+cache wins
+Time (no cache): 0.000108. Time (cache): 5.5e-05.
+cache wins
+Time (no cache): 0.00012. Time (cache): 1.0e-05.
+cache wins
+Time (no cache): 0.000105. Time (cache): 9.0e-06.
+cache wins
+Time (no cache): 0.000112. Time (cache): 5.5e-05.
+cache wins
+Time (no cache): 0.000207. Time (cache): 4.0e-05.
+cache wins
+Time (no cache): 9.4e-05. Time (cache): 9.0e-06.
+cache wins
+Time (no cache): 0.000105. Time (cache): 3.4e-05.
+cache wins
+Time (no cache): 0.000113. Time (cache): 5.9e-05.
+cache wins
+Time (no cache): 0.000109. Time (cache): 1.0e-05.
+cache wins
+Time (no cache): 0.000111. Time (cache): 3.1e-05.
+cache wins
+Time (no cache): 0.000101. Time (cache): 3.2e-05.
+cache wins
+Time (no cache): 0.00011. Time (cache): 0.000131.
+no cache wins
+Time (no cache): 0.000102. Time (cache): 0.000121.
+no cache wins
+Time (no cache): 0.000124. Time (cache): 7.2e-05.
+cache wins
+Time (no cache): 0.000151. Time (cache): 6.4e-05.
+cache wins
+Time (no cache): 9.2e-05. Time (cache): 3.3e-05.
+cache wins
+Time (no cache): 0.000182. Time (cache): 5.3e-05.
+cache wins
+Time (no cache): 0.000166. Time (cache): 1.1e-05.
+cache wins
+Time (no cache): 0.000114. Time (cache): 8.5e-05.
+cache wins
+Time (no cache): 0.000104. Time (cache): 5.4e-05.
+cache wins
+Time (no cache): 0.000182. Time (cache): 8.0e-06.
+cache wins
+Time (no cache): 9.7e-05. Time (cache): 3.4e-05.
+cache wins
+Time (no cache): 0.000109. Time (cache): 3.8e-05.
+cache wins
+Time (no cache): 0.000129. Time (cache): 4.3e-05.
+cache wins
+Time (no cache): 8.6e-05. Time (cache): 8.0e-06.
+cache wins
+Time (no cache): 0.000104. Time (cache): 3.4e-05.
+cache wins
+Time (no cache): 0.00011. Time (cache): 5.8e-05.
+cache wins
+Time (no cache): 0.000102. Time (cache): 6.0e-05.
+cache wins
+Time (no cache): 0.000109. Time (cache): 3.6e-05.
+cache wins
+Time (no cache): 0.000119. Time (cache): 9.5e-05.
+cache wins
+Time (no cache): 0.000176. Time (cache): 5.0e-05.
+cache wins
+Time (no cache): 0.0001. Time (cache): 9.0e-06.
+cache wins
+Time (no cache): 0.000155. Time (cache): 5.3e-05.
+cache wins
+Time (no cache): 0.00013. Time (cache): 1.0e-05.
+cache wins
+Time (no cache): 0.000123. Time (cache): 0.000104.
+cache wins
+Time (no cache): 8.6e-05. Time (cache): 3.1e-05.
+cache wins
+Time (no cache): 9.7e-05. Time (cache): 4.2e-05.
+cache wins
+Time (no cache): 8.1e-05. Time (cache): 5.1e-05.
+cache wins
+Time (no cache): 0.000112. Time (cache): 6.6e-05.
+cache wins
+Time (no cache): 0.000155. Time (cache): 3.5e-05.
+cache wins
+Time (no cache): 0.000105. Time (cache): 5.5e-05.
+cache wins
+Time (no cache): 0.000111. Time (cache): 1.0e-05.
+cache wins
+Time (no cache): 0.000131. Time (cache): 9.0e-06.
+cache wins
+Time (no cache): 0.000112. Time (cache): 6.4e-05.
+cache wins
+Time (no cache): 0.000102. Time (cache): 3.1e-05.
+cache wins
+Time (no cache): 0.0001. Time (cache): 1.1e-05.
+cache wins
+Time (no cache): 0.000107. Time (cache): 3.4e-05.
+cache wins
+Time (no cache): 0.000121. Time (cache): 3.5e-05.
+cache wins
+Time (no cache): 0.000112. Time (cache): 4.0e-05.
+cache wins
+Time (no cache): 8.8e-05. Time (cache): 3.5e-05.
+cache wins
+Time (no cache): 0.00012. Time (cache): 1.1e-05.
+cache wins
+Time (no cache): 0.000105. Time (cache): 3.3e-05.
+cache wins
+Time (no cache): 0.00014. Time (cache): 1.0e-05.
+cache wins
+Time (no cache): 9.7e-05. Time (cache): 3.3e-05.
+cache wins
+Time (no cache): 8.4e-05. Time (cache): 9.0e-06.
+cache wins
+Time (no cache): 0.000112. Time (cache): 6.3e-05.
+cache wins
+Time (no cache): 0.000128. Time (cache): 9.0e-06.
+cache wins
+Time (no cache): 0.000102. Time (cache): 4.1e-05.
+cache wins
+Time (no cache): 9.3e-05. Time (cache): 8.0e-06.
+cache wins
+Time (no cache): 0.000114. Time (cache): 1.0e-05.
+cache wins
+Time (no cache): 0.000112. Time (cache): 3.5e-05.
+cache wins
+Time (no cache): 0.000116. Time (cache): 6.8e-05.
+cache wins
+Time (no cache): 0.000114. Time (cache): 9.0e-06.
+cache wins
+Time (no cache): 0.000107. Time (cache): 9.0e-06.
+cache wins
+Time (no cache): 0.000112. Time (cache): 9.0e-06.
+cache wins
+Time (no cache): 0.000119. Time (cache): 1.0e-05.
+cache wins
+Time (no cache): 0.000115. Time (cache): 9.0e-06.
+cache wins
+Time (no cache): 0.000115. Time (cache): 9.0e-06.
+cache wins
+Time (no cache): 9.4e-05. Time (cache): 2.6e-05.
+cache wins
+Time (no cache): 0.000546. Time (cache): 5.6e-05.
+cache wins
+Time (no cache): 0.000123. Time (cache): 9.0e-06.
+cache wins
+Time (no cache): 0.000119. Time (cache): 7.9e-05.
+cache wins
+98 cache wins. 2 no cache wins.
+
+Compare speed of multiples vs. multiples_sieve methods:
+Time (no sieve): 2.9e-05. Time (sieve): 9.7e-05.
+no sieve wins
+
+Time (no sieve): 9.2e-05. Time (sieve): 5.2e-05.
+sieve wins
+
+Time (no sieve): 2.7e-05. Time (sieve): 5.5e-05.
+no sieve wins
+
+Time (no sieve): 2.5e-05. Time (sieve): 6.6e-05.
+no sieve wins
+
+Time (no sieve): 2.6e-05. Time (sieve): 5.5e-05.
+no sieve wins
+
+Time (no sieve): 2.9e-05. Time (sieve): 5.6e-05.
+no sieve wins
+
+Time (no sieve): 0.000101. Time (sieve): 0.000131.
+no sieve wins
+
+Time (no sieve): 2.6e-05. Time (sieve): 5.1e-05.
+no sieve wins
+
+Time (no sieve): 2.7e-05. Time (sieve): 4.6e-05.
+no sieve wins
+
+Time (no sieve): 3.1e-05. Time (sieve): 0.000165.
+no sieve wins
+
+Time (no sieve): 2.7e-05. Time (sieve): 5.1e-05.
+no sieve wins
+
+Time (no sieve): 2.7e-05. Time (sieve): 4.6e-05.
+no sieve wins
+
+Time (no sieve): 3.2e-05. Time (sieve): 7.8e-05.
+no sieve wins
+
+Time (no sieve): 2.7e-05. Time (sieve): 6.5e-05.
+no sieve wins
+
+Time (no sieve): 2.7e-05. Time (sieve): 4.3e-05.
+no sieve wins
+
+Time (no sieve): 2.9e-05. Time (sieve): 6.9e-05.
+no sieve wins
+
+Time (no sieve): 2.5e-05. Time (sieve): 4.4e-05.
+no sieve wins
+
+Time (no sieve): 2.8e-05. Time (sieve): 4.7e-05.
+no sieve wins
+
+Time (no sieve): 2.8e-05. Time (sieve): 0.000171.
+no sieve wins
+
+Time (no sieve): 2.7e-05. Time (sieve): 4.7e-05.
+no sieve wins
+
+Time (no sieve): 2.8e-05. Time (sieve): 5.1e-05.
+no sieve wins
+
+Time (no sieve): 2.7e-05. Time (sieve): 8.2e-05.
+no sieve wins
+
+Time (no sieve): 2.9e-05. Time (sieve): 7.1e-05.
+no sieve wins
+
+Time (no sieve): 6.0e-05. Time (sieve): 0.000191.
+no sieve wins
+
+Time (no sieve): 2.4e-05. Time (sieve): 9.0e-05.
+no sieve wins
+
+Time (no sieve): 3.1e-05. Time (sieve): 8.1e-05.
+no sieve wins
+
+Time (no sieve): 2.9e-05. Time (sieve): 0.000124.
+no sieve wins
+
+Time (no sieve): 2.7e-05. Time (sieve): 4.9e-05.
+no sieve wins
+
+Time (no sieve): 3.2e-05. Time (sieve): 0.00016.
+no sieve wins
+
+Time (no sieve): 3.1e-05. Time (sieve): 6.8e-05.
+no sieve wins
+
+Time (no sieve): 2.5e-05. Time (sieve): 4.3e-05.
+no sieve wins
+
+Time (no sieve): 3.2e-05. Time (sieve): 6.3e-05.
+no sieve wins
+
+Time (no sieve): 2.4e-05. Time (sieve): 4.4e-05.
+no sieve wins
+
+Time (no sieve): 2.9e-05. Time (sieve): 0.000113.
+no sieve wins
+
+Time (no sieve): 2.6e-05. Time (sieve): 4.8e-05.
+no sieve wins
+
+Time (no sieve): 2.4e-05. Time (sieve): 5.2e-05.
+no sieve wins
+
+Time (no sieve): 2.8e-05. Time (sieve): 9.0e-05.
+no sieve wins
+
+Time (no sieve): 3.1e-05. Time (sieve): 5.3e-05.
+no sieve wins
+
+Time (no sieve): 2.8e-05. Time (sieve): 0.000121.
+no sieve wins
+
+Time (no sieve): 3.0e-05. Time (sieve): 0.000106.
+no sieve wins
+
+Time (no sieve): 2.6e-05. Time (sieve): 4.5e-05.
+no sieve wins
+
+Time (no sieve): 3.0e-05. Time (sieve): 0.00012.
+no sieve wins
+
+Time (no sieve): 2.5e-05. Time (sieve): 7.1e-05.
+no sieve wins
+
+Time (no sieve): 2.8e-05. Time (sieve): 0.000117.
+no sieve wins
+
+Time (no sieve): 2.8e-05. Time (sieve): 8.3e-05.
+no sieve wins
+
+Time (no sieve): 2.8e-05. Time (sieve): 7.4e-05.
+no sieve wins
+
+Time (no sieve): 3.1e-05. Time (sieve): 0.000139.
+no sieve wins
+
+Time (no sieve): 2.5e-05. Time (sieve): 7.9e-05.
+no sieve wins
+
+Time (no sieve): 3.1e-05. Time (sieve): 0.000123.
+no sieve wins
+
+Time (no sieve): 2.3e-05. Time (sieve): 5.0e-05.
+no sieve wins
+
+Time (no sieve): 2.9e-05. Time (sieve): 6.0e-05.
+no sieve wins
+
+Time (no sieve): 3.3e-05. Time (sieve): 8.7e-05.
+no sieve wins
+
+Time (no sieve): 2.7e-05. Time (sieve): 4.9e-05.
+no sieve wins
+
+Time (no sieve): 2.7e-05. Time (sieve): 0.000133.
+no sieve wins
+
+Time (no sieve): 3.1e-05. Time (sieve): 8.1e-05.
+no sieve wins
+
+Time (no sieve): 2.7e-05. Time (sieve): 5.7e-05.
+no sieve wins
+
+Time (no sieve): 2.7e-05. Time (sieve): 4.3e-05.
+no sieve wins
+
+Time (no sieve): 2.8e-05. Time (sieve): 9.1e-05.
+no sieve wins
+
+Time (no sieve): 2.4e-05. Time (sieve): 0.000142.
+no sieve wins
+
+Time (no sieve): 3.1e-05. Time (sieve): 6.5e-05.
+no sieve wins
+
+Time (no sieve): 2.8e-05. Time (sieve): 4.5e-05.
+no sieve wins
+
+Time (no sieve): 2.9e-05. Time (sieve): 4.6e-05.
+no sieve wins
+
+Time (no sieve): 2.8e-05. Time (sieve): 6.2e-05.
+no sieve wins
+
+Time (no sieve): 3.0e-05. Time (sieve): 0.000167.
+no sieve wins
+
+Time (no sieve): 2.6e-05. Time (sieve): 7.8e-05.
+no sieve wins
+
+Time (no sieve): 2.5e-05. Time (sieve): 6.3e-05.
+no sieve wins
+
+Time (no sieve): 3.0e-05. Time (sieve): 9.7e-05.
+no sieve wins
+
+Time (no sieve): 3.1e-05. Time (sieve): 5.5e-05.
+no sieve wins
+
+Time (no sieve): 2.8e-05. Time (sieve): 0.000147.
+no sieve wins
+
+Time (no sieve): 3.0e-05. Time (sieve): 4.6e-05.
+no sieve wins
+
+Time (no sieve): 2.9e-05. Time (sieve): 0.000143.
+no sieve wins
+
+Time (no sieve): 2.7e-05. Time (sieve): 4.4e-05.
+no sieve wins
+
+Time (no sieve): 2.8e-05. Time (sieve): 5.4e-05.
+no sieve wins
+
+Time (no sieve): 2.8e-05. Time (sieve): 4.8e-05.
+no sieve wins
+
+Time (no sieve): 3.0e-05. Time (sieve): 7.8e-05.
+no sieve wins
+
+Time (no sieve): 2.6e-05. Time (sieve): 4.7e-05.
+no sieve wins
+
+Time (no sieve): 2.5e-05. Time (sieve): 4.4e-05.
+no sieve wins
+
+Time (no sieve): 2.8e-05. Time (sieve): 6.3e-05.
+no sieve wins
+
+Time (no sieve): 2.7e-05. Time (sieve): 0.000165.
+no sieve wins
+
+Time (no sieve): 2.7e-05. Time (sieve): 6.0e-05.
+no sieve wins
+
+Time (no sieve): 3.1e-05. Time (sieve): 6.6e-05.
+no sieve wins
+
+Time (no sieve): 2.9e-05. Time (sieve): 8.2e-05.
+no sieve wins
+
+Time (no sieve): 3.2e-05. Time (sieve): 9.0e-05.
+no sieve wins
+
+Time (no sieve): 0.000103. Time (sieve): 6.4e-05.
+sieve wins
+
+Time (no sieve): 2.7e-05. Time (sieve): 5.2e-05.
+no sieve wins
+
+Time (no sieve): 2.8e-05. Time (sieve): 5.8e-05.
+no sieve wins
+
+Time (no sieve): 2.8e-05. Time (sieve): 6.4e-05.
+no sieve wins
+
+Time (no sieve): 2.5e-05. Time (sieve): 4.5e-05.
+no sieve wins
+
+Time (no sieve): 2.4e-05. Time (sieve): 0.000446.
+no sieve wins
+
+Time (no sieve): 3.0e-05. Time (sieve): 9.1e-05.
+no sieve wins
+
+Time (no sieve): 2.6e-05. Time (sieve): 5.2e-05.
+no sieve wins
+
+Time (no sieve): 2.7e-05. Time (sieve): 5.8e-05.
+no sieve wins
+
+Time (no sieve): 3.0e-05. Time (sieve): 0.000268.
+no sieve wins
+
+Time (no sieve): 2.6e-05. Time (sieve): 0.000158.
+no sieve wins
+
+Time (no sieve): 3.2e-05. Time (sieve): 6.0e-05.
+no sieve wins
+
+Time (no sieve): 3.2e-05. Time (sieve): 0.000138.
+no sieve wins
+
+Time (no sieve): 2.8e-05. Time (sieve): 5.0e-05.
+no sieve wins
+
+Time (no sieve): 2.8e-05. Time (sieve): 5.1e-05.
+no sieve wins
+
+Time (no sieve): 3.1e-05. Time (sieve): 0.000135.
+no sieve wins
+
+Time (no sieve): 2.4e-05. Time (sieve): 5.5e-05.
+no sieve wins
+
+2 sieve wins. 98 no sieve wins.
