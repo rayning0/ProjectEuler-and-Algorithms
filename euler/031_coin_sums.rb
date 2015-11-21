@@ -13,8 +13,10 @@ It is possible to make £2 in the following way:
 How many different ways can £2 be made using any number of coins?
 =end
 
+# Brute Force Solution
+
 n = 200
-v = [200, 100, 50, 20, 10, 5, 2, 1] 
+v = [200, 100, 50, 20, 10, 5, 2, 1]
 c = []  # final array of all coin permutations that add up to n
 d = []  # each different permutation
 d7 = 0
@@ -47,11 +49,11 @@ end
             break if dval < 0
             (0..dmax[6]).each do |d6|
               dval -= d6 * v[6]
-              break if dval < 0 
-              d7 = dval / v[7]        
-               
-              c << [d0, d1, d2, d3, d4, d5, d6, d7] 
-              #p [d0, d1, d2, d3, d4, d5, d6, d7] 
+              break if dval < 0
+              d7 = dval / v[7]
+
+              c << [d0, d1, d2, d3, d4, d5, d6, d7]
+              #p [d0, d1, d2, d3, d4, d5, d6, d7]
               dval += d6 * v[6]
             end
             dval = n - d0 * v[0] - d1 * v[1] - d2 * v[2] - d3 * v[3] - d4 * v[4]
@@ -67,8 +69,32 @@ end
   dval = n
 end
 
-puts "For #{n}, we have #{c.size} ways to make it. They are:"
+puts "Brute force solution: For #{n}, we have #{c.size} ways to make it. They are:"
 #p c
 puts "It took #{Time.now - start} secs."
 
 # "For 200, we have 73682 ways to make it. They are: (lists them all). It took 0.094477 secs."
+
+# Optimal Solution
+
+start = Time.now
+
+def coin_sum(target)
+  coin_sizes = [1, 2, 5, 10, 20, 50, 100, 200]
+  ways = Array.new(201, 0)
+  ways[0] = 1
+
+  coin_sizes.each do |coin|
+    #puts "coin: #{coin}"
+    (coin..target).each do |sum|
+      #puts "sum: #{sum}. sum-coin: #{sum-coin}"
+      ways[sum] += ways[sum - coin]
+      #puts "ways[#{sum}]: #{ways[sum]}"
+    end
+  end
+  ways[target]
+end
+
+puts "Optimal solution: #{coin_sum(200)} ways to make the sum. It took #{Time.now - start} secs."
+
+# Optimal solution: 73682 ways to make the sum. It took 0.000282 secs.
