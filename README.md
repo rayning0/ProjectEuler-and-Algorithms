@@ -1,4 +1,4 @@
-Finished solving 50 Project Euler problems!!! (http://projecteuler.net/problems) (5/6/2014) Only 6.76%, 32000 out of 474000 software people worldwide, have done this.
+Finished solving 50 Project Euler problems!!! (http://projecteuler.net/problems) (5/6/2014) Only 5.88%, 40759 out of 693691 software people worldwide, have done this.
 
 Graph algorithms (see my 900 lines of code, with full RSpec tests): https://github.com/rayning0/ProjectEuler-and-Algorithms/tree/master/graph_algorithms
 RSpec output: https://github.com/rayning0/ProjectEuler-and-Algorithms/blob/master/graph_algorithms/data/rspec_screen_output.txt
