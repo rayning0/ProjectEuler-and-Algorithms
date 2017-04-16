@@ -12,6 +12,7 @@
 # 
 # Which starting number, < 1 million, produces the longest chain?
 # ==================================================================
+require 'rspec/autorun'
 
 # Brute force way:
 def slow_way
@@ -33,54 +34,56 @@ def slow_way
   longest
 end
 
-start = Time.now
-puts "Longest chain was #{slow_way} terms. Took #{Time.now - start} secs." # 19 secs
+# start = Time.now
+# puts "Longest chain was #{slow_way} terms. Took #{Time.now - start} secs." # 18.2 secs
 
 # Faster way, using memoization. Makes hash of prior Collatz lengths.
 # If it sees old_length already recorded, adds old_length to length
 
 class Collatz
-  def initialize(max_num)
-    @hash = {}
-    @max_num = max_num
-  end
+  def longest_chain(starting_num)
+    old_length = {}
+    longest = 1
+    longest_n = starting_num
+    length = 1
 
-  def longest_chain
-    (2..@max_num - 1).each do |n|
-      length = 1
-      starting_n = n
+    (2..starting_num).each do |n|
+      initial_n = n
 
-      begin 
-        if n.even?
-          old_length = @hash[n/2]
-          if old_length
-            length += old_length 
-            break
-          else 
-            n /= 2
-          end
-        else
-          old_length = @hash[3 * n + 1]
-          if old_length
-            length += old_length
-            break
-          else
-            n = 3 * n + 1
-          end
-        end
-
+      until n == 1 || old_length[n]
+        n = if n.even?
+              n / 2
+            else
+              3 * n + 1
+            end
         length += 1
-      end until n == 1
+      end
 
-      @hash[starting_n] = length
+      length += old_length[n] if old_length[n]
+      old_length[initial_n] = length
+
+      if length > longest
+        longest = length
+        longest_n = initial_n
+      end
+      length = 0
     end
-    longest = @hash.values.max
-    return longest, @hash.key(longest)
+    return longest, longest_n
   end 
 end
 
-start = Time.now
-longest, starting_num = Collatz.new(1_000_000).longest_chain
-puts "Longest chain of #{longest} terms was made by #{starting_num}. Took #{Time.now - start} secs."
+# start = Time.now
+# longest, starting_num = Collatz.new.longest_chain(999_999)
+# puts "Longest chain of #{longest} terms was made by #{starting_num}. Took #{Time.now - start} secs."
+# Longest chain of 525 terms was made by 837799. Took 2.75 secs. (Brute force way took 18.2 secs.)
 
-# Longest chain of 525 terms was made by 837799. Took 3.03 secs. (Brute force way took 18.2 secs.)
+describe Collatz do
+  let(:c) { Collatz.new }
+  it '#longest_chain' do
+    expect(c.longest_chain(1)).to eq [1, 1]
+    expect(c.longest_chain(2)).to eq [2, 2]
+    expect(c.longest_chain(3)).to eq [8, 3]
+    expect(c.longest_chain(13)).to eq [20, 9]
+    expect(c.longest_chain(999_999)).to eq [525, 837799]
+  end
+end
