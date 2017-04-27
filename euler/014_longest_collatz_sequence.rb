@@ -1,3 +1,58 @@
+require 'benchmark'
+
+def count_iterations_storing_in_array(curr_val, curr_iterations=0)
+  if ($known_vals[curr_val] || curr_val <= 1)
+    return ($known_vals[curr_val] || 0) + curr_iterations
+  else
+    curr_val = if curr_val%2 == 0 then curr_val/2 else 3*curr_val + 1 end
+    return count_iterations_storing_in_array(curr_val, curr_iterations+1)
+  end
+end
+
+def count_iterations(curr_val, curr_iterations=0)
+  if ($known_vals.key?(curr_val) || curr_val <= 1)
+    return $known_vals[curr_val] + curr_iterations
+  else
+    curr_val = if curr_val%2 == 0 then curr_val/2 else 3*curr_val + 1 end
+    return count_iterations(curr_val, curr_iterations+1)
+  end
+end
+
+def solveWithArray
+  $known_vals = Array.new(1000020){ |i| nil }
+  $greatest_found = [-1, nil]
+  (1..1000000).each do |i|
+    iterations = count_iterations_storing_in_array(i)
+    $known_vals[i] = iterations
+    $greatest_found = [iterations, i] if iterations > $greatest_found[0]
+  end
+end
+
+def solveWithHash
+  $known_vals = {1 => 1}
+  $greatest_found = [-1, nil]
+  (1..1000000).each do |i|
+    iterations = count_iterations(i)
+    $known_vals[i] = iterations
+    $greatest_found = [iterations, i] if iterations > $greatest_found[0]
+  end
+end
+
+
+puts "Using hash: "
+Benchmark.bm() do |x|
+  3.times { x.report() { solveWithHash } }
+end
+
+puts "\n\nUsing array: "
+Benchmark.bm() do |x|
+  3.times { x.report() { solveWithArray } }
+end
+
+puts 'SOLUTION', $greatest_found
+
+
+
 # http://projecteuler.net/problem=14
 # The following iterative sequence is defined for the set of positive integers:
 
